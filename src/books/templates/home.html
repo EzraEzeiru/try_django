@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Books</title>
+</head>
+<body>
+<ul>
+{% for object in object_list %}
+<li> <a href="{% url 'books:book_detail' slug=object.slug %}">{{ object.title }}</a>  - {{ object.author }} - {{ object.genre }} <a href="{% url 'books:delete_book' slug=object.slug %}" style="margin-right:10px"> ❌ Delete </a>
+    <a href="{% url 'books:edit_book' slug=object.slug %}"> Edit </a></li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'books:add_book' %}"> <input type="submit" value="Add a book"></a>
+</body>
+</html>

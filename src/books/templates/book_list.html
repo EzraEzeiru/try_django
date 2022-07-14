@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Books</title>
+</head>
+<body>
+<ul>
+{% for object in books %}
+<li> {{ object.title }} - {{ object.author }} - {{ object.genre }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
